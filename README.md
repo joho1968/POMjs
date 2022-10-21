@@ -3,7 +3,7 @@
 
 # POMjs
 
-**POMjs** is a random password generator in HTML and pure Javascript. It can be customized by modifying the sources. There's really nothing magic going on here, but it works and is somewhat responsive. The goal was to make something small, useful, and resonably free from dependencies.
+**POMjs** is a random password generator in HTML and pure Javascript. It can be customized by modifying the sources. There's really nothing magic going on here, but it works and is somewhat responsive. The goal was to make something small, useful, and reasonably free from dependencies.
 
 ## Parts
 
