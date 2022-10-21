@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Random Password Generator" lang="en">
+        <meta name="description" content="Slumpmässigt Lösenord" lang="sv">
+        <meta name="description" content="Zufallsgenerator für Passwörter" lang="de">
+        <meta name="keywords" content="password generator,random password,lösenord,slumpmässigt lösenord,öppet moln,öppen källkod">
+        <meta name="author" content="Joaquim Homrighausen">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/png" href="favicon/favicon-32x32.png" />
+        <title lang="en">POMjs - Random Password Generator</title>
+        <title lang="sv">POMjs - Slumpmässigt Lösenord</title>
+        <title lang="de">POMjs - Zufallsgenerator für Passwörter</title>
+        <link media="all" rel="stylesheet" href="/css/normalize.min.css" />
+        <link media="all" rel="stylesheet" href="/css/password-om.css" />
+        <meta name="robots" content="index,nofollow">
+        <meta name="googlebot" content="index,nofollow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+        <meta name="bingbot" content="index,nofollow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+        <!--
+            You may, or may not, want to use these. If you put this up on your
+            own website, please be sure to change the fields accordingly,
+            thank you.
+        -->
+        <!--
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="POMjs - Random Password Generator" />
+        <meta property="og:description" content="Plain vanilla javascript random password generator" />
+        <meta property="og:image" content="favicon/pomjs-logo.png" />
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:site_name" content="POMjs" />
+        <meta property="og:url" content="https://password.oppetmoln.se">
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:creator" content="@oppetmoln" />
+        <meta property="twitter:site" content="@oppetmoln" />        
+        <meta property="twitter:domain" content="POMjs" />
+        <meta property="twitter:url" content="https://password.oppetmoln.se" />
+        <meta name="twitter:title" content="POMjs - Random Password Generator" />
+        <meta name="twitter:description" content="Plain vanilla javascript random password generator" />
+        <meta name="twitter:image" content="favicon/pomjs-logo.png" />
+         -->
+    </head>
+ <!--
+        POMjs 1.00
+        
+        Plain vanilla javascript for the "Öppet Moln" ("Open Cloud") random
+        password generator site (password.oppetmoln.se). For the sake of having
+        a name, it shall be POMjs. There's really nothing fancy going on here
+        :-)
+        
+        Github repo: https://github.com/joho1968/POMjs
+        
+        Copyright 2022 Joaquim Homrighausen; All rights reserved.
+        Development sponsored by WebbPlatsen i Sverige AB
+        https://www.webbplatsen.se
+ 
+        This file is part of POMjs. POMjs is free software.
+        
+        You may redistribute it and/or modify it under the terms of the
+        GNU General Public License version 2, as published by the Free Software
+        Foundation.
+ 
+        POMjs is distributed in the hope that it will be useful, but WITHOUT
+        ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+        FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+        for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with the POMjs package. If not, write to:
+        
+            The Free Software Foundation, Inc.,
+            51 Franklin Street, Fifth Floor
+            Boston, MA  02110-1301, USA.
+ -->
+    <body>
+        <header>
+            <h1 id="cfg-page-title"></h1>
+            <h2 id="cfg-page-slogan"></h2>
+            <p id="cfg-page-lang"></p>
+            <noscript>
+                <p style="color:red;font-weight:bold;">This site requires Javascript support</p>
+            </noscript>
+        </header>
+        <main>
+            <div id="generator">
+              <div class="selection-row">
+                  <div id="gen-uppercase" class="static-col"></div>
+                  <div id="gen-uppercase-select" class="selection-col">
+                    <input class="check-option" type="checkbox" name="mk-uppercase-select" id="mk-uppercase-select" tabindex="1" checked />
+                  </div>
+              </div>
+              <div class="selection-row">
+                  <div id="gen-lowercase" class="static-col"></div>
+                  <div id="gen-lowercase-select" class="selection-col">
+                    <input class="check-option" type="checkbox" name="mk-lowercase-select" id="mk-lowercase-select" tabindex="2" checked />
+                  </div>
+              </div>
+              <div class="selection-row">
+                  <div id="gen-digits" class="static-col"></div>
+                  <div id="gen-digits-select" class="selection-col">
+                    <input class="check-option" type="checkbox" name="mk-digits-select" id="mk-digits-select" tabindex="3" checked />
+                  </div>
+              </div>
+              <div class="selection-row">
+                  <div id="gen-special-one" class="static-col"></div>
+                  <div id="gen-special-one-select" class="selection-col">
+                    <input class="check-option" type="checkbox" name="mk-special-one-select" id="mk-special-one-select" tabindex="4" checked />
+                  </div>
+              </div>
+              <div class="selection-row">
+                  <div id="gen-special-two" class="static-col"></div>
+                  <div id="gen-special-two-select" class="selection-col">
+                    <input class="check-option" type="checkbox" name="mk-special-two-select" id="mk-special-two-select" tabindex="5" checked />
+                  </div>
+              </div>
+              <div class="selection-row" id="mk-password-len-div">
+                <div id="gen-length" class="static-col">
+                    <input oninput="document.getElementById('mk-length-field').value=this.value;" type="range" min="1" max="2" value="1" class="slider" step="4" name="mk-password-len-slider" id="mk-password-len-slider" tabindex="6" />
+                </div>
+                <div id="gen-length-field" class="selection-col">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{1,3}" size="3" maxlength="3" name="mk-length-field" id="mk-length-field" value="" tabindex="7" />
+                </div>
+              </div>
+              <div class="selection-row" id="mk-password-btn-div">
+                <div class="static-col"></div>
+                <div class="selection-col">
+                <button type="button" name="mk-password-btn" id="mk-password-btn" title="" tabindex="8">
+                    &#8629;&nbsp;
+                </button>
+                </div>
+              </div>
+              <div id="mk-password-div">
+                <input type="text" size="40" maxlength="256" name="mk-password-field" id="mk-password-field" tabindex="9" readonly />
+              </div>
+              <div id="mk-password-good">
+                <div id="mk-password-strength">&nbsp;</div>
+              </div>
+            </div>
+        </main>
+        
+        <footer>
+            <!--
+                You may, or may not, want to display this. If you put this up
+                on your own website, please be sure to change the content
+                accordingly, thank you.
+            -->
+            <!--
+            <p id="gen-hosted-by">Website hosted by <span style="display:inline-block"><a href="https://www.webbplatsen.se" target="_blank" tabindex="-1">WebbPlatsen i Sverige AB</a></span></p>
+            -->
+            <small>POMjs by Joaquim Homrighausen, <span style="display:inline-block">get it at <a href="https://github.com/joho1968/POMjs" target="_blank" tabindex="-1">GitHub</a> (GPLv2)</span></small>
+            <p id="gen-timestamp"></p>
+        </footer>
+    </body>
+    
+
+</html>
+
+<script async src="/js/password-om.min.js" type="text/javascript" id="password-om"></script>
+
+    
