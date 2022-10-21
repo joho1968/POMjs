@@ -9,11 +9,11 @@
 
 **POMjs** uses a "minified" version of [normalize.css](https://necolas.github.io/normalize.css) to reset the DOM to reasonable settings :blush:
 
-**POMjs** includes no external resources and contains no tracking code or cookie management.
+**POMjs** includes no externally loaded resources and contains no tracking code or cookie management.
 
 ## Installation
 
-Download the distribution or clone the repo. Files and folders should be placed in your web root, or another folder accessible to your web server.
+Download the distribution or clone the repo. Files and folders should be placed in your web root, or another folder accessible to your web server. All references to `CSS` and `Javascript` uses relative paths.
 
 There may be references to "Öppet Moln" ("Open Cloud"), which is a Swedish site run by the author of **POMjs**, [oppetmoln.se](https://oppetmoln.se), to promote open source solutions for general use. You can, of course, delete such references.
 
