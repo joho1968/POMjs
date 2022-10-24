@@ -7,6 +7,7 @@
         <meta name="description" content="Zufallsgenerator für Passwörter" lang="de">
         <meta name="keywords" content="password generator,random password,lösenord,slumpmässigt lösenord,öppet moln,öppen källkod">
         <meta name="author" content="Joaquim Homrighausen">
+        <meta name="generator" content="POMjs">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/png" href="favicon/favicon-32x32.png" />
         <title lang="en">POMjs - Random Password Generator</title>
@@ -27,23 +28,24 @@
         <meta property="og:type" content="website" />
         <meta property="og:title" content="POMjs - Random Password Generator" />
         <meta property="og:description" content="Plain vanilla javascript random password generator" />
-        <meta property="og:image" content="favicon/pomjs-logo.png" />
-        <meta property="og:image:width" content="500" />
+        <meta property="og:image" content="/favicon/pomjs-logo.png" />
+        <meta property="og:image:width" content="256" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:site_name" content="POMjs" />
         <meta property="og:url" content="https://password.oppetmoln.se">
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta property="twitter:creator" content="@oppetmoln" />
         <meta property="twitter:site" content="@oppetmoln" />        
         <meta property="twitter:domain" content="POMjs" />
         <meta property="twitter:url" content="https://password.oppetmoln.se" />
         <meta name="twitter:title" content="POMjs - Random Password Generator" />
         <meta name="twitter:description" content="Plain vanilla javascript random password generator" />
-        <meta name="twitter:image" content="favicon/pomjs-logo.png" />
-         -->
+        <meta name="twitter:image" content="/favicon/pomjs-logo.png" />
+        -->
+        <script defer src="js/password-om.js" type="text/javascript" id="password-om"></script>
     </head>
  <!--
-        POMjs 1.00
+        POMjs 1.1.0
         
         Plain vanilla javascript for the "Öppet Moln" ("Open Cloud") random
         password generator site (password.oppetmoln.se). For the sake of having
@@ -76,6 +78,9 @@
  -->
     <body>
         <header>
+            <!--
+            <h1>DEV</h1>
+            -->
             <h1 id="cfg-page-title"></h1>
             <h2 id="cfg-page-slogan"></h2>
             <p id="cfg-page-lang"></p>
@@ -126,7 +131,7 @@
               <div class="selection-row" id="mk-password-btn-div">
                 <div class="static-col"></div>
                 <div class="selection-col">
-                <button type="button" name="mk-password-btn" id="mk-password-btn" title="" tabindex="8">
+                <button type="button" name="mk-password-btn" id="mk-password-btn" title="" tabindex="8" autofocus>
                     &#8629;&nbsp;
                 </button>
                 </div>
@@ -149,14 +154,10 @@
             <!--
             <p id="gen-hosted-by">Website hosted by <span style="display:inline-block"><a href="https://www.webbplatsen.se" target="_blank" tabindex="-1">WebbPlatsen i Sverige AB</a></span></p>
             -->
-            <small>POMjs by Joaquim Homrighausen, <span style="display:inline-block">get it at <a href="https://github.com/joho1968/POMjs" target="_blank" tabindex="-1">GitHub</a> (GPLv2)</span></small>
+            <p><small>POMjs by Joaquim Homrighausen, <span style="display:inline-block">get it at <a href="https://github.com/joho1968/POMjs" target="_blank" tabindex="-1">GitHub</a> (GPLv2)</span></small></p>
             <p id="gen-timestamp"></p>
         </footer>
     </body>
     
 
 </html>
-
-<script async src="js/password-om.min.js" type="text/javascript" id="password-om"></script>
-
-    

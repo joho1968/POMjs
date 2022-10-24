@@ -1,5 +1,5 @@
 /**
- * POMjs 1.00
+ * POMjs 1.1.0
  *
  * password-om.js
  *
@@ -48,6 +48,7 @@ const POM_strDigits_Default = true;
 const POM_strSpecialOne_Default = true;
 const POM_strSpecialTwo_Default = false;
 const POM_mkPasswordOnLoad = true;
+const POM_changeIsClick = true;
 const POM_minLength = 16;
 const POM_maxLength = 256;
 const POM_sliderStep = 8;
@@ -85,6 +86,9 @@ function POM_validateNumInput() {
             mkLengthSlider.value = POM_maxLength;
         }
         this.value = mkLengthSlider.value;
+    }
+    if (POM_changeIsClick) {
+        document.getElementById('mk-password-btn').click();
     }
 }
 /* Validate "manual input" */
@@ -201,7 +205,9 @@ function POM_generatePassword() {
                 }
                 /* See if password contains specialtwo characters */
                 searchStr = '[' + POM_escapeRegExp(POM_strSpecialTwo) + ']';
-                console.log('Using ' + searchStr + ' to scan password');
+                if (POM_debug) {
+                    console.log('Using ' + searchStr + ' to scan password');
+                }
                 re = new RegExp(searchStr);
                 if (re.test(passwordGen)) {
                     scoreP++;
@@ -362,7 +368,7 @@ function POM_initialSetup() {
     /* Add timestamp, for no good reason :) */
     document.getElementById("gen-timestamp").innerText = Date.now();
     /* Add some event handlers */
-    document.getElementById('mk-password-len-slider').addEventListener("oninput", function() {
+    document.getElementById('mk-password-len-slider').addEventListener('input', function() {
         let mkLengthField = document.getElementById('mk-length-field');
         if (mkLengthField) {
             mkLengthField.value = this.value;
@@ -374,17 +380,28 @@ function POM_initialSetup() {
             this.value = mkLengthField.value;
         }
     });
-    document.getElementById('mk-length-field').addEventListener("click", function() {
+    document.getElementById('mk-length-field').addEventListener('click', function() {
         this.select();
     });
-    document.getElementById('mk-length-field').addEventListener("blur", POM_validateNumInput);
-    document.getElementById('mk-length-field').addEventListener("change", POM_validateNumInput);
-    document.getElementById('mk-password-btn').addEventListener("click", POM_generatePassword);
-    document.getElementById('mk-password-field').addEventListener("click", POM_copyPassword);
+    document.getElementById('mk-length-field').addEventListener('blur', POM_validateNumInput);
+    document.getElementById('mk-length-field').addEventListener('change', POM_validateNumInput);
+    document.getElementById('mk-password-btn').addEventListener('click', POM_generatePassword);
+    document.getElementById('mk-password-field').addEventListener('click', POM_copyPassword);
     /* Possibly generate password on load */
     if (POM_mkPasswordOnLoad) {
         document.getElementById('mk-password-btn').click();
     }
+    /* Possibly generate password on configuration changes */
+    if (POM_changeIsClick) {
+        document.getElementById('mk-uppercase-select').addEventListener('click', POM_generatePassword);
+        document.getElementById('mk-special-one-select').addEventListener('click', POM_generatePassword);
+        document.getElementById('mk-digits-select').addEventListener('click', POM_generatePassword);
+        document.getElementById('mk-lowercase-select').addEventListener('click', POM_generatePassword);
+        document.getElementById('mk-digits-select').addEventListener('click', POM_generatePassword);
+        document.getElementById('mk-special-two-select').addEventListener('click', POM_generatePassword);
+        document.getElementById('mk-password-len-slider').addEventListener('change', POM_generatePassword);
+    }
+    
 }
 
 

@@ -17,19 +17,20 @@ Download the distribution or clone the repo. Files and folders should be placed 
 
 There may be references to "Öppet Moln" ("Open Cloud"), which is a Swedish site run by the author of **POMjs**, [oppetmoln.se](https://oppetmoln.se), to promote open source solutions for general use. You can, of course, delete such references.
 
-I'd appreciate a mention on whatever website you use this one, and a link to the original repo.
+I'd appreciate a mention on whatever website you use this one, and a link to the original repo, but it's not required.
 
 ## Usage
 
-From a visitor perspective, simply enable the desired string sequences, and possibly adjust the password length. Click on the `Enter` button.
+* From a visitor perspective, simply enable the desired string sequences, and possibly adjust the password length. Click on the <kbd>Enter</kbd> button or use the <kbd>Enter</kbd> key when the button has focus.
+* The generated password is displayed at the bottom of the box, along with a strength indicator.
+* The slider can also be used to change the number of characters in the generated password, as can the input field to the right of the slider.
+* The HTML should have proper `tabindex` attributes for easier keyboard navigation.
+* To copy the generated password to the clipboard, click on the password.
+* "Dark mode" (browser setting) should be honored.
 
-The generated password is displayed at the bottom of the box, along with a strength indicator.
+## Changes
 
-The slider can also be used to change the number of characters in the generated password, as can the input field to the right of the slider.
-
-The HTML should have proper `tabindex` attributes for easier keyboard navigation.
-
-To copy the generated password to the clipboard, click on the password.
+Please see [CHANGELOG.md](CHANGELOG.md) for a list of changes.
 
 ## Customization
 
@@ -52,6 +53,7 @@ Most parameters/settings can be changed in the `.js` file.
 | POM_strSpecialOne_Default | true                 | Enables POM_strSpecialOne by default       |
 | POM_strSpecialTwo_Default | **false**            | Enables POM_strSpecialTwo by default       |
 | POM_mkPasswordOnLoad      | true                 | Generate password on first page load       |
+| POM_changeIsClick         | true                 | Generate password when parameters are changed |
 | POM_minLength             | 16                   | Minimum (and default) password length      |
 | POM_maxLength             | 256                  | Maxmium password length                    |
 | POM_sliderStep            | 8                    | 1 - ..                                     |
@@ -84,6 +86,13 @@ The "cloud icon" comes from [Streamline](https://streamlinehq.com)
 **POMjs** is licensed under the GPLv2 license. See the [`LICENSE`](LICENSE) file for more details.
 
 Copyright 2022 Joaquim Homrighausen.
+
+### Demo
+
+You can see POMjs in action, and more or less unmodified, on the following links:
+
+* Öppet Moln ("Open Cloud"); [password.oppetmoln.se](https://password.oppetmoln.se)
+* WebbPlatsen i Sverige AB; [password.webbplatsen.se](https://password.webbplatsen.se)
 
 ### External references
 
