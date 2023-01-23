@@ -1,5 +1,5 @@
 /**
- * POMjs 1.1.0
+ * POMjs 1.1.1
  *
  * password-om.js
  *
@@ -7,7 +7,7 @@
  * generator site (password.oppetmoln.se). For the sake of having a name, it
  * shall be POMjs. There's really nothing fancy going on here :-)
  *
- * Copyright 2022 Joaquim Homrighausen; All rights reserved.
+ * Copyright 2022, 2023 Joaquim Homrighausen; All rights reserved.
  * Development sponsored by WebbPlatsen i Sverige AB
  * https://www.webbplatsen.se
  *
@@ -331,6 +331,12 @@ function POM_initialSetup() {
             POM_cfgTitle = 'Zufallsgenerator für Passwörter';
             POM_cfgSlogan = 'Keine Cookies, <span style="display:inline-block">keine Tracker.</span><br/>Nur Passwörter.';
             POM_cfgGenPasswordHint = 'Passwort generieren';
+            break;            
+        case 'nl':
+            /* Thank you Jeroen van de Leur */
+            POM_cfgTitle = 'Willekeurig Wachtwoord Generator';
+            POM_cfgSlogan = 'Geen cookies, <span style="display:inline-block">geen trackers.</span><br/>Uitsluitend wachtwoorden.';
+            POM_cfgGenPasswordHint = 'Genereer wachtwoord';
             break;            
         default:
             POM_cfgTitle = 'Random Password Generator';

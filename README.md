@@ -67,7 +67,7 @@ Please note that `index.html` makes use of `password-om.min.css` by default.
 
 ### Translation
 
-The (very) few strings can be translated. The distribution contains strings in English (default), Swedish, and German. The code attempts to guess the language from the **navigator.language** properties. If they do not exist, or cannot be interpreted, the fallback language used is English.
+The (very) few strings can be translated. The distribution contains strings in English (default), Swedish, German, and Dutch. The code attempts to guess the language from the **navigator.language** properties. If they do not exist, or cannot be interpreted, the fallback language used is English.
 
 The "string setup" is done in the `POM_initialSetup()` function.
 
@@ -76,6 +76,7 @@ If you would like to contribute to the translation, please open an issue and pos
 ## Credits
 
 Thanks to **Peter Hampf** (hello `O/T-Track` :metal:) for the German translation :blush:
+Thanks to **Jeroen van de Leur** for the Dutch translation :blush:
 
 The "cloud icon" comes from [Streamline](https://streamlinehq.com)
 
@@ -85,7 +86,7 @@ The "cloud icon" comes from [Streamline](https://streamlinehq.com)
 
 **POMjs** is licensed under the GPLv2 license. See the [`LICENSE`](LICENSE) file for more details.
 
-Copyright 2022 Joaquim Homrighausen.
+Copyright 2022, 2023 Joaquim Homrighausen.
 
 ### Demo
 
