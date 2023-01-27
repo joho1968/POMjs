@@ -338,6 +338,11 @@ function POM_initialSetup() {
             POM_cfgSlogan = 'Geen cookies, <span style="display:inline-block">geen trackers.</span><br/>Uitsluitend wachtwoorden.';
             POM_cfgGenPasswordHint = 'Genereer wachtwoord';
             break;            
+        case 'fi':
+            POM_cfgTitle = 'Salasanageneraattori';
+            POM_cfgSlogan = 'Ei evästeitä, <span style="display:inline-block">ei seurantaa.</span><br/>Vain salasanoja.';
+            POM_cfgGenPasswordHint = 'Generoi salasana';
+            break;
         default:
             POM_cfgTitle = 'Random Password Generator';
             POM_cfgSlogan = 'No cookies, <span style="display:inline-block">no trackers.</span><br/>Just passwords.';
