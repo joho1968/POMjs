@@ -67,7 +67,7 @@ Please note that `index.html` makes use of `password-om.min.css` by default.
 
 ### Translation
 
-The (very) few strings can be translated. The distribution contains strings in English (default), Swedish, German, and Dutch. The code attempts to guess the language from the **navigator.language** properties. If they do not exist, or cannot be interpreted, the fallback language used is English.
+The (very) few strings can be translated. The distribution contains strings in English (default), Swedish, German, Dutch, Finnish, French, and Luxembourgish. The code attempts to guess the language from the **navigator.language** properties. If they do not exist, or cannot be interpreted, the fallback language used is English.
 
 The "string setup" is done in the `POM_initialSetup()` function.
 
@@ -77,6 +77,8 @@ If you would like to contribute to the translation, please open an issue and pos
 
 Thanks to **Peter Hampf** (hello `O/T-Track` :metal:) for the German translation :blush:
 Thanks to **Jeroen van de Leur** for the Dutch translation :blush:
+Thanks to **Alain Fontaine** for the French and Luxembourgish translations :blush:
+Thanks to **Thomas Raehalme** for the Finnish translations :blush:
 
 The "cloud icon" comes from [Streamline](https://streamlinehq.com)
 

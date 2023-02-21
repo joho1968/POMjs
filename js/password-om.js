@@ -1,5 +1,5 @@
 /**
- * POMjs 1.1.1
+ * POMjs 1.1.2
  *
  * password-om.js
  *
@@ -338,6 +338,24 @@ function POM_initialSetup() {
             POM_cfgSlogan = 'Geen cookies, <span style="display:inline-block">geen trackers.</span><br/>Uitsluitend wachtwoorden.';
             POM_cfgGenPasswordHint = 'Genereer wachtwoord';
             break;            
+        case 'lb':
+            /* Thank you Alain Fontaine */
+            POM_cfgTitle = 'Zoufallspasswuertgenerator';
+            POM_cfgSlogan = 'Keng Cookien, <span style="display:inline-block">keng Trackeren.</span><br/>Nemme Passwierder.';
+            POM_cfgGenPasswordHint = 'Passwuert genereieren';
+            break;            
+        case 'fr':
+            /* Thank you Alain Fontaine */
+            POM_cfgTitle = 'Générateur de mot de passe au hazard';
+            POM_cfgSlogan = 'Pas de cookies, <span style="display:inline-block">pas de traceurs.</span><br/>Juste des mots de passe.';
+            POM_cfgGenPasswordHint = 'Générer mot de passe';
+            break;          
+        case 'fi':
+            /* Thank you Thomas Raehalme */
+            POM_cfgTitle = 'Salasanageneraattori';
+            POM_cfgSlogan = 'Ei evästeitä, <span style="display:inline-block">ei seurantaa.</span><br/>Vain salasanoja.';
+            POM_cfgGenPasswordHint = 'Generoi salasana';
+            break;              
         default:
             POM_cfgTitle = 'Random Password Generator';
             POM_cfgSlogan = 'No cookies, <span style="display:inline-block">no trackers.</span><br/>Just passwords.';
