@@ -28,7 +28,7 @@
  *  51 Franklin Street, Fifth Floor
  *  Boston, MA  02110-1301, USA.
  */
- 
+
 /* Some globals, to be filled by script */
 
 var POM_cfgLanguage = 'noLang?';
@@ -109,19 +109,19 @@ function POM_generatePassword() {
             let passwordSource = '';
             if (document.getElementById('mk-uppercase-select').checked) {
                 passwordSource += POM_strUppercase;
-            } 
+            }
             if (document.getElementById('mk-special-one-select').checked) {
                 passwordSource += (POM_strSpecialOne + POM_strSpecialOne);
             }
             if (document.getElementById('mk-digits-select').checked) {
                 passwordSource += POM_strDigits;
-            } 
+            }
             if (document.getElementById('mk-lowercase-select').checked) {
                 passwordSource += POM_strLowercase;
-            } 
+            }
             if (document.getElementById('mk-digits-select').checked) {
                 passwordSource += POM_strDigits;
-            } 
+            }
             if (document.getElementById('mk-special-two-select').checked) {
                 passwordSource += (POM_strSpecialTwo + POM_strSpecialTwo);
             }
@@ -132,13 +132,13 @@ function POM_generatePassword() {
                     const charPos = Math.floor(Math.random() * passwordSource.length);
                     theChar = passwordSource[charPos];
                     passwordGen += theChar;
-                }            
+                }
                 passwordField.value = passwordGen;
-                
+
                 let scoreP = 0;/* Password strength score, max is 8 */
                 let searchStr;
                 let re;
-                
+
                 /* See if password contains uppercase characters */
                 searchStr = '[' + POM_escapeRegExp(POM_strUppercase) + ']';
                 if (POM_debug) {
@@ -262,11 +262,11 @@ function POM_generatePassword() {
                 }
                 strengthP.style.width = (scoreP * 12.5) + '%';
                 strengthP.style.transition = 'width 0.3s ease-in';
-            } 
+            }
         }
     }
 }
-/* Copy content of generated password field, if any, to clipboard */ 
+/* Copy content of generated password field, if any, to clipboard */
 function POM_copyPassword() {
     let passwordField = document.getElementById('mk-password-field');
     if (passwordField && passwordField.value.length > 0) {
@@ -275,7 +275,7 @@ function POM_copyPassword() {
             navigator.clipboard.writeText(passwordField.value).then(function() {
                 passwordField.classList.add('mk-password-field-focus');
             }, function(e) {
-                alert("Could not copy text: " + e);    
+                alert("Could not copy text: " + e);
             });
         } else {
             /* Use legacy method */
@@ -296,7 +296,7 @@ function POM_copyPassword() {
                     alert('That did not work');
                 }
             } catch(e) {
-                alert('Could not copy text: ' + e.message);    
+                alert('Could not copy text: ' + e.message);
             }
             document.body.removeChild(theText);
         }
@@ -318,7 +318,7 @@ function POM_initialSetup() {
     } else {
         POM_cfgLanguage = '???';
     }
-    /* Add your translation here */    
+    /* Add your translation here */
     switch(POM_cfgLanguage) {
         case 'sv':
         case 'se':
@@ -333,35 +333,35 @@ function POM_initialSetup() {
             POM_cfgGenPasswordHint = 'Passwort generieren';
             break;
         case 'hu':
-	    /* Thank you Mihaly Balassy */
-	    POM_cfgTitle = 'Véletlenszerű jelszógenerátor';
-	    POM_cfgSlogan = 'Cookie-k nélkül, <span style="display:inline-block">nyomkövetők nélkül.</span><br/>Csak jelszavak.';
-	    POM_cfgGenPasswordHint = 'Jelszó generálása';
-	    break;
+            /* Thank you Mihaly Balassy */
+            POM_cfgTitle = 'Véletlenszerű jelszógenerátor';
+            POM_cfgSlogan = 'Cookie-k nélkül, <span style="display:inline-block">nyomkövetők nélkül.</span><br/>Csak jelszavak.';
+            POM_cfgGenPasswordHint = 'Jelszó generálása';
+            break;
         case 'nl':
             /* Thank you Jeroen van de Leur */
             POM_cfgTitle = 'Willekeurig Wachtwoord Generator';
             POM_cfgSlogan = 'Geen cookies, <span style="display:inline-block">geen trackers.</span><br/>Uitsluitend wachtwoorden.';
             POM_cfgGenPasswordHint = 'Genereer wachtwoord';
-            break;            
+            break;
         case 'lb':
             /* Thank you Alain Fontaine */
             POM_cfgTitle = 'Zoufallspasswuertgenerator';
             POM_cfgSlogan = 'Keng Cookien, <span style="display:inline-block">keng Trackeren.</span><br/>Nemme Passwierder.';
             POM_cfgGenPasswordHint = 'Passwuert genereieren';
-            break;            
+            break;
         case 'fr':
             /* Thank you Alain Fontaine */
             POM_cfgTitle = 'Générateur de mot de passe au hazard';
             POM_cfgSlogan = 'Pas de cookies, <span style="display:inline-block">pas de traceurs.</span><br/>Juste des mots de passe.';
             POM_cfgGenPasswordHint = 'Générer mot de passe';
-            break;          
+            break;
         case 'fi':
             /* Thank you Thomas Raehalme */
             POM_cfgTitle = 'Salasanageneraattori';
             POM_cfgSlogan = 'Ei evästeitä, <span style="display:inline-block">ei seurantaa.</span><br/>Vain salasanoja.';
             POM_cfgGenPasswordHint = 'Generoi salasana';
-            break;              
+            break;
         default:
             POM_cfgTitle = 'Random Password Generator';
             POM_cfgSlogan = 'No cookies, <span style="display:inline-block">no trackers.</span><br/>Just passwords.';
@@ -379,7 +379,7 @@ function POM_initialSetup() {
     document.getElementById('mk-digits-select').checked = POM_strDigits_Default;
     document.getElementById('mk-special-one-select').checked = POM_strSpecialOne_Default;
     document.getElementById('mk-special-two-select').checked = POM_strSpecialTwo_Default;
-    
+
     document.getElementById('mk-password-field').value = '';
     let mkPasswordSlider = document.getElementById('mk-password-len-slider');
     if (mkPasswordSlider) {
@@ -431,7 +431,7 @@ function POM_initialSetup() {
         document.getElementById('mk-special-two-select').addEventListener('click', POM_generatePassword);
         document.getElementById('mk-password-len-slider').addEventListener('change', POM_generatePassword);
     }
-    
+
 }
 
 
