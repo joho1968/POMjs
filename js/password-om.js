@@ -1,5 +1,5 @@
 /**
- * POMjs 1.1.2
+ * POMjs 1.1.3
  *
  * password-om.js
  *
@@ -331,7 +331,13 @@ function POM_initialSetup() {
             POM_cfgTitle = 'Zufallsgenerator für Passwörter';
             POM_cfgSlogan = 'Keine Cookies, <span style="display:inline-block">keine Tracker.</span><br/>Nur Passwörter.';
             POM_cfgGenPasswordHint = 'Passwort generieren';
-            break;            
+            break;
+        case 'hu':
+	    /* Thank you Mihaly Balassy */
+	    POM_cfgTitle = 'Véletlenszerű jelszógenerátor';
+	    POM_cfgSlogan = 'Cookie-k nélkül, <span style="display:inline-block">nyomkövetők nélkül.</span><br/>Csak jelszavak.';
+	    POM_cfgGenPasswordHint = 'Jelszó generálása';
+	    break;
         case 'nl':
             /* Thank you Jeroen van de Leur */
             POM_cfgTitle = 'Willekeurig Wachtwoord Generator';
