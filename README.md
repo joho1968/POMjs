@@ -79,6 +79,9 @@ Thanks to **Peter Hampf** (hello `O/T-Track` :metal:) for the German translation
 Thanks to **Jeroen van de Leur** for the Dutch translation :blush:
 Thanks to **Alain Fontaine** for the French and Luxembourgish translations :blush:
 Thanks to **Thomas Raehalme** for the Finnish translations :blush:
+Thanks to **Mihaly Balassy** for the Hungarian translations :blush:
+Thanks to **Gregor Godler** for the Slovenian translations :blush:
+Thanks for **Sarah Bailey** for assistance in "debugging" use on iOS/macOS :blush:
 
 The "cloud icon" comes from [Streamline](https://streamlinehq.com)
 

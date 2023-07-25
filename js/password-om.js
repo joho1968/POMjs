@@ -1,5 +1,5 @@
 /**
- * POMjs 1.1.3
+ * POMjs 1.1.4
  *
  * password-om.js
  *
@@ -361,6 +361,12 @@ function POM_initialSetup() {
             POM_cfgTitle = 'Salasanageneraattori';
             POM_cfgSlogan = 'Ei evästeitä, <span style="display:inline-block">ei seurantaa.</span><br/>Vain salasanoja.';
             POM_cfgGenPasswordHint = 'Generoi salasana';
+            break;
+        case 'sl':
+            /* Thank you Gregor Godler */
+            POM_cfgTitle = 'Generator Naključnih Gesel';
+            POM_cfgSlogan = 'Brez piškotkov, <span style="display:inline-block">nič sledilnikov.</span><br/>Samo geslo.';
+            POM_cfgGenPasswordHint = 'Generiraj geslo';
             break;
         default:
             POM_cfgTitle = 'Random Password Generator';

@@ -2,26 +2,29 @@
 <html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
     <head>
         <meta charset="UTF-8">
-        <meta name="description" content="Random Password Generator" lang="en">
-        <meta name="description" content="Slumpmässigt Lösenord" lang="sv">
-        <meta name="description" content="Zufallsgenerator für Passwörter" lang="de">
-        <meta name="description" content=“Willekeurig Wachtwoordgenerator" lang=“nl">
-        <meta name="description" content=“Zoufallspasswuertgenerator" lang=“lb">
-        <meta name="description" content=“Générateur de mot de passe au hazard" lang=“fr">
-        <meta name="description" content="Salasanageneraattori" lang="fi">
-        <meta name="keywords" content="password generator,random password,lösenord,slumpmässigt lösenord,öppet moln,öppen källkod">
-        <meta name="author" content="Joaquim Homrighausen">
-        <meta name="generator" content="POMjs">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Random Password Generator" lang="en"/>
+        <meta name="description" content="Slumpmässigt Lösenord" lang="sv" />
+        <meta name="description" content="Zufallsgenerator für Passwörter" lang="de" />
+        <meta name="description" content="Véletlenszerű jelszógenerátor" lang="hu" />        
+        <meta name="description" content="Willekeurig Wachtwoordgenerator" lang="nl" />
+        <meta name="description" content="Zoufallspasswuertgenerator" lang="lb" />
+        <meta name="description" content="Générateur de mot de passe au hazard" lang="fr" />
+        <meta name="description" content="Salasanageneraatt&ia=answerori" lang="fi" />
+        <meta name="description" content="Generator Naključnih Gesel" lang="sl" />        
+        <meta name="keywords" content="password generator,random password,lösenord,slumpmässigt lösenord,öppet moln,öppen källkod" />
+        <meta name="author" content="Joaquim Homrighausen" />
+        <meta name="generator" content="POMjs" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" type="image/png" href="favicon/favicon-32x32.png" />
         <title lang="en">POMjs - Random Password Generator</title>
         <title lang="sv">POMjs - Slumpmässigt Lösenord</title>
         <title lang="de">POMjs - Zufallsgenerator für Passwörter</title>
-	<title lang="hu">POMjs - Véletlenszerű jelszógenerátor</title>
+        <title lang="hu">POMjs - Véletlenszerű jelszógenerátor</title>
         <title lang=“nl">POMjs - Willekeurig Wachtwoordgenerator</title>
         <title lang=“lb">POMjs - Zoufallspasswuertgenerator</title>
         <title lang=“fr">POMjs - Générateur de mot de passe au hazard</title>
-        <title lang=“fi">POMjs - Salasanageneraattori</title>        
+        <title lang=“fi">POMjs - Salasanageneraattori</title>
+        <title lang="sl">POMjs - Generator Naključnih Gesel</title>        
         <link media="all" rel="stylesheet" href="css/normalize.min.css" />
         <link media="all" rel="stylesheet" href="css/password-om.css" />
         <meta name="robots" content="index,nofollow">
@@ -52,7 +55,7 @@
         <script defer src="js/password-om.min.js" type="text/javascript" id="password-om"></script>
     </head>
  <!--
-        POMjs 1.1.3
+        POMjs 1.1.4
         
         Plain vanilla javascript for the "Öppet Moln" ("Open Cloud") random
         password generator site (password.oppetmoln.se). For the sake of having
@@ -138,9 +141,7 @@
               <div class="selection-row" id="mk-password-btn-div">
                 <div class="static-col"></div>
                 <div class="selection-col">
-                <button type="button" name="mk-password-btn" id="mk-password-btn" title="" tabindex="8" autofocus>
-                    &#8629;&nbsp;
-                </button>
+                    <button type="button" name="mk-password-btn" id="mk-password-btn" title="" tabindex="8" autofocus>&#8617;</button>
                 </div>
               </div>
               <div id="mk-password-div">
@@ -157,9 +158,9 @@
                 You may, or may not, want to display this. If you put this up
                 on your own website, please be sure to change the content
                 accordingly, thank you.
-            <p id="gen-hosted-by">Website hosted by <span style="display:inline-block"><a href="https://www.webbplatsen.se" target="_blank" tabindex="-1">WebbPlatsen i Sverige AB</a></span></p>
             -->
-            <p><small>POMjs by Joaquim Homrighausen, <span style="display:inline-block">get it at <a href="https://github.com/joho1968/POMjs" target="_blank" tabindex="-1">GitHub</a> (GPLv2)</span></small></p>
+            <p id="gen-hosted-by">Website hosted by <span style="display:inline-block"><a href="https://www.webbplatsen.se" target="_blank" tabindex="-1">WebbPlatsen i Sverige AB</a></span></p>
+            <p><small>POMjs 1.1.4 by Joaquim Homrighausen, <span style="display:inline-block">get it at <a href="https://github.com/joho1968/POMjs" target="_blank" tabindex="-1">GitHub</a> (GPLv2)</span></small></p>
             <p id="gen-timestamp"></p>
         </footer>
     </body>
