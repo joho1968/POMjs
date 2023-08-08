@@ -368,6 +368,11 @@ function POM_initialSetup() {
             POM_cfgSlogan = 'Brez piškotkov, <span style="display:inline-block">nič sledilnikov.</span><br/>Samo geslo.';
             POM_cfgGenPasswordHint = 'Generiraj geslo';
             break;
+        case 'zh':
+            POM_cfgTitle = '随机密码生成器';
+            POM_cfgSlogan = 'No cookies, <span style="display:inline-block">no trackers.</span><br/>Just passwords.';
+            POM_cfgGenPasswordHint = '生成密码';
+            break;
         default:
             POM_cfgTitle = 'Random Password Generator';
             POM_cfgSlogan = 'No cookies, <span style="display:inline-block">no trackers.</span><br/>Just passwords.';
